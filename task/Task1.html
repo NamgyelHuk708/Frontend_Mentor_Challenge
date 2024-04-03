@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple Calculation</title>
+    <style>
+        body { margin: 30px; }
+    </style>
+</head>
+<body>
+    <body>
+        <h1>Calculatuion</h1>
+        Value1 : <input type="text" id="firstNumber"><br><br>
+        Value2 : <input type="text" id="secondNumber"><br><br>
+        <input type="button" value="Add" onclick="calculate('add')">
+        <input type="button" value="Subtract" onclick="calculate('subtract')">
+        <input type="button" value="Multiply" onclick="calculate('multiply')">
+        <input type="button" value="Divide" onclick="calculate('divide')">
+    </body>
+    <p>ANSWER IS : <span id="result"></span></p>
+
+    <script>
+        function calculate(operation) {
+            var num1 = document.getElementById("firstNumber").value;
+            var num2 = document.getElementById("secondNumber").value;
+            var result;
+
+            switch(operation) {
+                case 'add':
+                    result = parseFloat(num1) + parseFloat(num2);
+                    break;
+                case 'subtract':
+                    result = parseFloat(num1) - parseFloat(num2);
+                    break;
+                case 'multiply':
+                    result = parseFloat(num1) * parseFloat(num2);
+                    break;
+                case 'divide':
+                    result = parseFloat(num1) / parseFloat(num2);
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
